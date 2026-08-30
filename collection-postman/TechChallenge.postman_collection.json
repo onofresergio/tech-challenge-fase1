@@ -1,0 +1,576 @@
+{
+  "info": {
+    "_postman_id": "77a504a7-6164-4d38-8982-0ca12d989ed1",
+    "name": "TechChallenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49478839",
+    "_collection_link": "https://go.postman.co/collection/49478839-77a504a7-6164-4d38-8982-0ca12d989ed1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Usuarios - Casos de Uso com sucesso",
+      "item": [
+        {
+          "name": "Buscar Todos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar por nome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/Onofre",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "Onofre"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar usuário a partir do id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\": \"login\",\r\n    \"senha\": \"teste\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Usuário",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Onofre\",\r\n  \"email\": \"teste2@email.com\",\r\n  \"login\": \"login\",\r\n  \"senha\": \"teste\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Principal\",\r\n    \"numero\": \"100\",\r\n    \"cidade\": \"Cidade Exemplo\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cep\": \"01001000\"\r\n  },\r\n  \"tipoUsuario\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar dados",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Onofre Sérgio\",\r\n  \"email\": \"teste@email.com\",\r\n  \"login\": \"onofre.sergio\",\r\n  \"senha\": \"teste\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Principal-2\",\r\n    \"numero\": \"1009\",\r\n    \"cidade\": \"Cidade Exemplo 2\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cep\": \"01001000\"\r\n  },\r\n  \"tipoUsuario\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Trocar Senha",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"novaSenha\": \"teste123\",\r\n    \"confirmaSenha\": \"teste123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/1/senha",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "1",
+                "senha"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Autenticação - Casos de Uso com sucesso",
+      "item": [
+        {
+          "name": "Login acessando a base de dados",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\": \"login\",\r\n    \"senha\": \"teste\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/autenticacao/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "autenticacao",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gerar Token JWT",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    const resposta = pm.response.json();\r",
+                  "    \r",
+                  "    // Salva globalmente (independe de Environment selecionado)\r",
+                  "    pm.globals.set(\"jwt_token\", resposta.token);\r",
+                  "    \r",
+                  "    console.log(\"Token salvo globalmente: \" + resposta.token);\r",
+                  "} else {\r",
+                  "    console.log(\"Falha no login, token não atualizado.\");\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"login\": \"login\",\r\n  \"senha\": \"teste\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Autenticação - Casos de Uso com erros",
+      "item": [
+        {
+          "name": "Login acessando a base de dados com erro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\": \"login\",\r\n    \"senha\": \"senha-errada\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/autenticacao/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "autenticacao",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gerar Token JWT com erro",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    const resposta = pm.response.json();\r",
+                  "    \r",
+                  "    // Salva globalmente (independe de Environment selecionado)\r",
+                  "    pm.globals.set(\"jwt_token\", resposta.token);\r",
+                  "    \r",
+                  "    console.log(\"Token salvo globalmente: \" + resposta.token);\r",
+                  "} else {\r",
+                  "    console.log(\"Falha no login, token não atualizado.\");\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"login\": \"login\",\r\n  \"senha\": \"errado\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuarios - Casos de Uso com erros",
+      "item": [
+        {
+          "name": "Cadastrar Usuário - Erro Email já existe",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Onofre\",\r\n  \"email\": \"teste@email.com\",\r\n  \"login\": \"login\",\r\n  \"senha\": \"teste\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Principal\",\r\n    \"numero\": \"100\",\r\n    \"cidade\": \"Cidade Exemplo\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cep\": \"01001000\"\r\n  },\r\n  \"tipoUsuario\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Usuário - Erro Campos obrigatorios",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"\",\r\n  \"email\": \"novo@email.com\",\r\n  \"login\": \"\",\r\n  \"senha\": \"\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Principal\",\r\n    \"numero\": \"100\",\r\n    \"cidade\": \"Cidade Exemplo\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cep\": \"01001000\"\r\n  },\r\n  \"tipoUsuario\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Trocar Senha - Erro de campos ausentes",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"novaSenha\": \"\",\r\n    \"confirmaSenha\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/1/senha",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "1",
+                "senha"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Trocar Senha - Erro de valores diferentes",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"novaSenha\": \"teste1\",\r\n    \"confirmaSenha\": \"teste123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/1/senha",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "1",
+                "senha"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar dados Erro campos obrigatorios",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"\",\r\n  \"email\": \"teste@email.com\",\r\n  \"login\": \"onofre.sergio\",\r\n  \"senha\": \"teste\",\r\n  \"endereco\": {\r\n    \"rua\": \"Rua Principal-2\",\r\n    \"numero\": \"1009\",\r\n    \"cidade\": \"Cidade Exemplo 2\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cep\": \"01001000\"\r\n  },\r\n  \"tipoUsuario\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/usuarios/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
