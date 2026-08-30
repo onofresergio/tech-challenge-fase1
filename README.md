@@ -1,8 +1,9 @@
-## 📖 Documentação da API (Swagger)
+<div align="center">
 
-Você pode visualizar a documentação interativa dos endpoints desta API diretamente no seu navegador através do Swagger Editor.
+## 📖 Documentação Interativa da API
 
-[![Ver no Swagger UI][botao-imagem]][link-swagger]
+Clique no botão abaixo para explorar os endpoints da **Tech Challenge API** e testar as requisições diretamente pelo navegador:
 
-[botao-imagem]: https://shields.io
-[link-swagger]: https://swagger.io
+[![Swagger UI](https://shields.io)](https://swagger.io)
+
+</div>
