@@ -1,9 +1,21 @@
-<div align="center">
+# Tech Challenge - Fase 1
 
-## 📖 Documentação Interativa da API
+Este repositório contém a especificação da API em **OpenAPI (Swagger)**.
 
-Clique no botão abaixo para explorar os endpoints da **Tech Challenge API** e testar as requisições diretamente pelo navegador:
+## 📖 Documentação da API
 
-[![Swagger UI](https://shields.io)](https://raw.githubusercontent.com/onofresergio/tech-challenge-fase1/refs/heads/main/openapi.json)
+A documentação interativa da API pode ser acessada pelo Swagger UI hospedado no GitHub Pages:
 
-</div>
+👉 [Visualizar documentação da API](https://onofresergio.github.io/tech-challenge-fase1/)
+
+## 📂 Estrutura do repositório
+
+- `openapi.json` → Arquivo com a especificação OpenAPI.
+- `index.html` → Página que carrega o Swagger UI e exibe a documentação.
+- `README.md` → Este arquivo com instruções e link para a documentação.
+
+## 🚀 Como usar
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/onofresergio/tech-challenge-fase1.git
