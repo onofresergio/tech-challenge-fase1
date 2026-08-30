@@ -1,8 +1,23 @@
-<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação da API</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+</head>
+<body>
+<div id="swagger-ui"></div>
 <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
 <script>
-    SwaggerUIBundle({
-      url: "openapi.json",
-      dom_id: "#swagger-ui"
-    });
+    window.onload = function() {
+      SwaggerUIBundle({
+        url: "openapi.json", // seu arquivo JSON
+        dom_id: "#swagger-ui",
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
+        layout: "BaseLayout"
+      });
+    };
 </script>
+</body>
+</html>
