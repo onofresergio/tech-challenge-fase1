@@ -1,0 +1,1 @@
+INSERT INTO tipo_usuario (id, descricao) values (1,'Dono de Restaurante'), (2, 'Cliente');
